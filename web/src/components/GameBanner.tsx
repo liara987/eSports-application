@@ -1,14 +1,12 @@
-import "../styles/main.css";
-export interface GameBannerProps {
-  id: string;
+export interface GameBannerProps {  
   title: string;
   bannerUrl: string;
   adsCount: number;
 }
 
-export function GameBanner({ id, bannerUrl, title, adsCount }: GameBannerProps) {
+export function GameBanner({ bannerUrl, title, adsCount }: GameBannerProps) {
   return (
-      <a key={id} className="relative rounded-lg overflow-hidden keen-slider__slide" href="#">
+      <a className="relative rounded-lg overflow-hidden keen-slider__slide" href="#">
           <img src={bannerUrl} alt={title} />
           <div className='w-full pt-16 pb-4 px-4 bg-game-gradient absolute bottom-0 left-0 right-0'>
               <strong className='font-bold text-white'>{title}</strong>
