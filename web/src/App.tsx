@@ -1,8 +1,9 @@
 import "./styles/main.css";
-import logoImg from "./assets/Logo.svg";
-import { GameBanner } from "./../components/GameBanner";
-import { CreateAddBanner } from "./../components/CreateAddBanner";
+
 import { useEffect, useState } from "react";
+import logoImg from './assets/logo.svg';
+import { CreateAddBanner } from "./components/CreateAddBanner";
+import { GameBanner } from "./components/GameBanner";
 
 interface Game {
   id: string;
