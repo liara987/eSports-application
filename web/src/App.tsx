@@ -1,7 +1,7 @@
 import "./styles/main.css";
 
 import { useEffect, useState } from "react";
-import logoImg from './assets/logo.svg';
+import logoImg from './assets/Logo.svg';
 import { CreateAddBanner } from "./components/CreateAddBanner";
 import { GameBanner } from "./components/GameBanner";
 
