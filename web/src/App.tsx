@@ -1,17 +1,19 @@
 import "./styles/main.css";
 
 import { useEffect, useState } from "react";
-import logoImg from './assets/Logo.svg';
+import logoImg from "./assets/Logo.svg";
 import { CreateAddBanner } from "./components/CreateAddBanner";
 import { GameBanner } from "./components/GameBanner";
+import * as Dialog from "@radix-ui/react-dialog";
+import { CreateAdModal } from './components/CreateAddModal';
 
 interface Game {
   id: string;
   title: string;
   bannerUrl: string;
   _count: {
-    ads: number
-  }
+    ads: number;
+  };
 }
 
 function App() {
@@ -37,7 +39,7 @@ function App() {
       </h1>
 
       <div className="grid grid-cols-6 gap-6 mt-16">
-        {games.map(game => {
+        {games.map((game) => {
           return (
             <GameBanner
               key={game.id}
@@ -45,11 +47,14 @@ function App() {
               bannerUrl={game.bannerUrl}
               adsCount={game._count.ads}
             />
-          )
+          );
         })}
       </div>
+      <Dialog.Root>
+        <CreateAddBanner />
 
-      <CreateAddBanner />
+        <CreateAdModal/>
+      </Dialog.Root>
     </div>
   );
 }
