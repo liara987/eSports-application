@@ -7,6 +7,8 @@ import { GameBanner } from "./components/GameBanner";
 import * as Dialog from "@radix-ui/react-dialog";
 import { CreateAdModal } from "./components/CreateAddModal";
 import axios from "axios";
+import "keen-slider/keen-slider.min.css";
+import { useKeenSlider } from "keen-slider/react";
 
 interface Game {
   id: string;
@@ -18,6 +20,14 @@ interface Game {
 }
 
 function App() {
+  const [ref] = useKeenSlider<HTMLDivElement>({
+    mode: "free-snap",
+    loop: true,
+    slides: {
+      perView: 4,
+      spacing: 35,
+    },
+  })
   const [games, setGames] = useState<Game[]>([]);
 
   useEffect(() => {
@@ -37,15 +47,17 @@ function App() {
         está aqui
       </h1>
 
-      <div className="grid grid-cols-6 gap-6 mt-16">
+      <div className="grid grid-cols-6 gap-6 mt-16 keen-slider" ref={ref}>
         {games.map((game) => {
           return (
-            <GameBanner
-              key={game.id}
-              title={game.title}
-              bannerUrl={game.bannerUrl}
-              adsCount={game._count.ads}
-            />
+            <div className="keen-slider__slide number-slide">
+              <GameBanner
+                key={game.id}
+                title={game.title}
+                bannerUrl={game.bannerUrl}
+                adsCount={game._count.ads}
+              />
+            </div>
           );
         })}
       </div>
