@@ -5,7 +5,8 @@ import logoImg from "./assets/Logo.svg";
 import { CreateAddBanner } from "./components/CreateAddBanner";
 import { GameBanner } from "./components/GameBanner";
 import * as Dialog from "@radix-ui/react-dialog";
-import { CreateAdModal } from './components/CreateAddModal';
+import { CreateAdModal } from "./components/CreateAddModal";
+import axios from "axios";
 
 interface Game {
   id: string;
@@ -20,11 +21,9 @@ function App() {
   const [games, setGames] = useState<Game[]>([]);
 
   useEffect(() => {
-    fetch("http://localhost:3333/games/")
-      .then((response) => response.json())
-      .then((data) => {
-        setGames(data[0]);
-      });
+    axios("http://localhost:3333/games/").then((response) => {
+      setGames(response.data[0]);
+    });
   }, []);
 
   return (
@@ -53,7 +52,7 @@ function App() {
       <Dialog.Root>
         <CreateAddBanner />
 
-        <CreateAdModal/>
+        <CreateAdModal />
       </Dialog.Root>
     </div>
   );
