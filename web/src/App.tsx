@@ -7,8 +7,9 @@ import { GameBanner } from "./components/GameBanner";
 import * as Dialog from "@radix-ui/react-dialog";
 import { CreateAdModal } from "./components/CreateAddModal";
 import axios from "axios";
-import "keen-slider/keen-slider.min.css";
-import { useKeenSlider } from "keen-slider/react";
+import Slider from "react-slick";
+import "slick-carousel/slick/slick.css";
+import "slick-carousel/slick/slick-theme.css";
 
 interface Game {
   id: string;
@@ -20,14 +21,6 @@ interface Game {
 }
 
 function App() {
-  const [ref] = useKeenSlider<HTMLDivElement>({
-    mode: "free-snap",
-    loop: true,
-    slides: {
-      perView: 4,
-      spacing: 35,
-    },
-  })
   const [games, setGames] = useState<Game[]>([]);
 
   useEffect(() => {
@@ -35,6 +28,13 @@ function App() {
       setGames(response.data[0]);
     });
   }, []);
+
+  const settings = {
+    dots: false,
+    infinite: true,
+    slidesToShow: 5,
+    slidesToScroll: 1,
+  };
 
   return (
     <div className="max-w-[1344px] mx-auto flex flex-col items-center my-20">
@@ -46,24 +46,25 @@ function App() {
         </span>{" "}
         está aqui
       </h1>
-
-      <div className="grid grid-cols-6 gap-6 mt-16 keen-slider" ref={ref}>
-        {games.map((game) => {
-          return (
-            <div className="keen-slider__slide number-slide">
-              <GameBanner
-                key={game.id}
-                title={game.title}
-                bannerUrl={game.bannerUrl}
-                adsCount={game._count.ads}
-              />
-            </div>
-          );
-        })}
+      <div className="grid grid-cols-6 gap-6 mt-16 relative rounded-lg">
+        <div className="relative w-[100vw] rounded-lg max-w-[1344px]">
+          <Slider {...settings}>
+            {games.map((game) => {
+              return (
+                <div className="h-80" key={game.id}>
+                <GameBanner                                    
+                  title={game.title}
+                  bannerUrl={game.bannerUrl}
+                  adsCount={game._count.ads}
+                />
+                </div>
+              );
+            })}
+          </Slider>
+        </div>
       </div>
       <Dialog.Root>
         <CreateAddBanner />
-
         <CreateAdModal />
       </Dialog.Root>
     </div>
