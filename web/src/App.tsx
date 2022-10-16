@@ -34,6 +34,31 @@ function App() {
     infinite: true,
     slidesToShow: 5,
     slidesToScroll: 1,
+    responsive: [
+      {
+        breakpoint: 1025,
+        settings: {
+          slidesToShow: 4,
+          slidesToScroll: 4,
+        },
+      },
+      {
+        breakpoint: 769,
+        settings: {
+          slidesToShow: 3,
+          slidesToScroll: 3,
+          arrows: false,
+        },
+      },
+      {
+        breakpoint: 426,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1,
+          arrows: false,
+        },
+      },
+    ],
   };
 
   return (
@@ -52,11 +77,11 @@ function App() {
             {games.map((game) => {
               return (
                 <div className="h-80" key={game.id}>
-                <GameBanner                                    
-                  title={game.title}
-                  bannerUrl={game.bannerUrl}
-                  adsCount={game._count.ads}
-                />
+                  <GameBanner
+                    title={game.title}
+                    bannerUrl={game.bannerUrl}
+                    adsCount={game._count.ads}
+                  />
                 </div>
               );
             })}
