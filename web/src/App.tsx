@@ -64,14 +64,14 @@ function App() {
   return (
     <div className="max-w-[1344px] mx-auto flex flex-col items-center my-20">
       <img src={logoImg} alt="" />
-      <h1 className="text-6xl text-white font-black mt-20">
-        Seu{" "}
+      <h1 className="text-3xl sm:text-6xl text-center text-white font-black mt-10 sm:mt-20">
+        Seu
         <span className="bg-gradient-color text-transparent bg-clip-text">
           duo
-        </span>{" "}
+        </span>
         está aqui
       </h1>
-      <div className="grid grid-cols-6 gap-6 mt-16 relative rounded-lg">
+      <div className="grid grid-cols-6 gap-6 mt-8 sm:mt-16 relative rounded-lg">
         <div className="relative w-[100vw] rounded-lg max-w-[1344px]">
           <Slider {...settings}>
             {games.map((game) => {

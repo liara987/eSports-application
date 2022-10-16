@@ -35,18 +35,15 @@ export function CreateAdModal() {
     }
 
     try {
-      await axios.post(
-        `http://localhost:3333/games/${data.game}/ads`,
-        {
-          name: data.name,
-          yearsPlaying: Number(data.yearsPlaying),
-          discord: data.discord,
-          weekDays: weekDays.map(Number),
-          hourStart: data.hourStart,
-          hourEnd: data.hourEnd,
-          useVoiceChannerl: useVoiceChannerl,
-        }
-      );
+      await axios.post(`http://localhost:3333/games/${data.game}/ads`, {
+        name: data.name,
+        yearsPlaying: Number(data.yearsPlaying),
+        discord: data.discord,
+        weekDays: weekDays.map(Number),
+        hourStart: data.hourStart,
+        hourEnd: data.hourEnd,
+        useVoiceChannerl: useVoiceChannerl,
+      });
       alert("Anúncio criado com sucesso!");
     } catch (err) {
       console.log(err);
@@ -57,20 +54,23 @@ export function CreateAdModal() {
     <Dialog.Portal>
       <Dialog.Overlay className="bg-black/60 inset-0 fixed" />
 
-      <Dialog.Content className="fixed bg-[#2A2634] py-8 px-10 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg w-[480px] shadow-lg shadow-black/25">
-        <Dialog.Title className="text-3xl font-black">
+      <Dialog.Content className="fixed bg-[#2A2634] py-4 sm:py-8 px-5 sm:px-10 text-white top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 rounded-lg w-full sm:w-[480px] shadow-lg shadow-black/25">
+        <Dialog.Title className="text-2xl sm:text-3xl font-black">
           Publique um anúncio
         </Dialog.Title>
 
-        <form onSubmit={handleCreateAd} className="mt-8 flex flex-col gap-4">
-          <div className="flex flex-col gap-2"> 
+        <form
+          onSubmit={handleCreateAd}
+          className="mt-4 sm:mt-8 flex flex-col gap-2 sm:gap-4"
+        >
+          <div className="flex flex-col gap-1 sm:gap-2">
             <label htmlFor="game" className="font-semibold">
               Qual o game?
             </label>
             <select
               name="game"
               id="game"
-              className="bg-zinc-900 py-3 px-4 rounded text-sm placeholder:text-zinc-500 appearance-none"
+              className="bg-zinc-900 py-2 px-2 sm:py-3 sm:px-4 rounded text-sm placeholder:text-zinc-500 appearance-none"
               defaultValue=""
             >
               <option disabled value="">
@@ -87,7 +87,7 @@ export function CreateAdModal() {
             </select>
           </div>
 
-          <div className="flex flex-col gap-2">
+          <div className="flex flex-col gap-1 sm:gap-2">
             <label htmlFor="name">Seu nome (ou nickname)</label>
             <Input
               name="name"
@@ -96,8 +96,8 @@ export function CreateAdModal() {
             />
           </div>
 
-          <div className="grid grid-cols-2 gap-6">
-            <div className="flex flex-col gap-2">
+          <div className="grid grid-cols-1 gap-6 sm:grid-cols-2">
+            <div className="flex flex-col gap-1 sm:gap-2">
               <label htmlFor="yearsPlaying">Joga a quantos anos?</label>
               <Input
                 name="yearsPlaying"
@@ -106,7 +106,7 @@ export function CreateAdModal() {
                 placeholder="Tudo bem ser ZERO"
               />
             </div>
-            <div className="flex flex-col gap-2">
+            <div className="flex flex-col gap-1 sm:gap-2">
               <label htmlFor="discord">Qual o seu Discord?</label>
               <Input
                 name="discord"
@@ -117,13 +117,13 @@ export function CreateAdModal() {
             </div>
           </div>
 
-          <div className="flex gap-6">
-            <div className="flex flex-col gap-2">
+          <div className="flex flex-col sm:flex-row gap-3 sm:gap-6">
+            <div className="flex flex-col gap-1 sm:gap-2">
               <label htmlFor="weekDays">Quando costuma jogar?</label>
 
               <ToggleGroup.Root
                 type="multiple"
-                className="grid grid-cols-4 gap-2"
+                className="grid grid-cols-4 gap-1 sm:gap-2"
                 value={weekDays}
                 onValueChange={setWeekDays}
               >
@@ -192,9 +192,9 @@ export function CreateAdModal() {
                 </ToggleGroup.Item>
               </ToggleGroup.Root>
             </div>
-            <div className="flex flex-col gap-2 flex-1">
+            <div className="flex flex-col gap-1 sm:gap-2 flex-1">
               <label htmlFor="hourStart">Qual horário do dia?</label>
-              <div className="grid grid-cols-2 gap-2">
+              <div className="grid grid-cols-2 gap-1 sm:gap-2">
                 <Input
                   name="hourStart"
                   id="hourStart"
@@ -211,7 +211,7 @@ export function CreateAdModal() {
             </div>
           </div>
 
-          <label className="mt-2 flex items-center gap-2 text-sm">
+          <label className="mt-2 flex items-center gap-1 sm:gap-2 text-sm">
             <Checkbox.Root
               checked={useVoiceChannerl}
               onCheckedChange={(checked) => {
@@ -221,7 +221,7 @@ export function CreateAdModal() {
                   setUseVoiceChannerl(false);
                 }
               }}
-              className="w-6 h-6 p-1 rounded bg-zinc-900"
+              className="w-6 h-6 p-1 rounded bg-zinc-900 mr-1"
             >
               <Checkbox.Indicator>
                 <Check className="w-4 h-4 text-emerald-400" />
@@ -239,9 +239,9 @@ export function CreateAdModal() {
             </Dialog.Close>
             <button
               type="submit"
-              className="bg-violet-500 px-5 h-12 rounded-md font-semibold flex items-center gap-3 hover:bg-violet-600"
+              className="bg-violet-500 px-2 sm:px-5 h-12 rounded-md font-semibold flex items-center gap-2 sm:gap-3 hover:bg-violet-600"
             >
-              <GameController className="w-6 h-6" />
+              <GameController className="w-5 h-5 sm:w-6 sm:h-6" />
               Encontrar duo
             </button>
           </footer>
