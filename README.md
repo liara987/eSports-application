@@ -11,13 +11,5 @@ Esta é uma aplicação fullstack com o objetivo de ajudar as pessoas encontrare
 
 ## Web
 
-### Modal adicionar anúncio
-![chrome-capture-2022-9-28 (2)](https://user-images.githubusercontent.com/12224963/198494897-e53e36f8-05b0-420d-872f-a22b65e30257.gif)
-
 ### Carrossel responsivo
 ![chrome-capture-2022-9-28 (4)](https://user-images.githubusercontent.com/12224963/198495642-aa472c17-02c4-4f50-ab9d-513f1483f42a.gif)
-
-## App
-![image](https://user-images.githubusercontent.com/12224963/190554102-fbb5d8d3-5b08-4f63-a0c4-6cc77237f5a3.png)
-
- 
