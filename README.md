@@ -9,6 +9,15 @@ Esta é uma aplicação fullstack com o objetivo de ajudar as pessoas encontrare
 ![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)
 ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
+**Frontend Web:**
+Desenvolvido com React e estilizado usando Tailwind CSS para interfaces responsivas, modernas e fáceis de usar.
+**Frontend Mobile:**
+Construído com React Native, oferecendo uma experiência nativa e otimizada nos dispositivos móveis.
+**Backend:**
+Implementado com Node.js e TypeScript, garantindo desempenho, escalabilidade e segurança.
+**Banco de Dados:**
+Gerenciado com Prisma como ORM, integrando bases de dados SQL para armazenar perfis de usuários, mensagens e conexões.
+
 ## Web
 
 ### Carrossel responsivo
