@@ -1,5 +1,5 @@
 # ![Logo](https://user-images.githubusercontent.com/12224963/198496078-643fbea5-1c4d-42de-8e9b-43aa4c558180.png)
-Esta é uma aplicação fullstack com o objetivo de ajudar as pessoas encontrarem companhia para jogar online.
+Esta é uma aplicação fullstack projetada para conectar gamers que buscam companhia para jogar online. Seja para formar um time competitivo ou encontrar parceiros casuais para jogos.
 
 ### Tecnologias utilizadas:
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
