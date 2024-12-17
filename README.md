@@ -1,5 +1,5 @@
 # ![Logo](https://user-images.githubusercontent.com/12224963/198496078-643fbea5-1c4d-42de-8e9b-43aa4c558180.png)
-Esta é uma aplicação fullstack projetada para conectar gamers que buscam companhia para jogar online. Seja para formar um time competitivo ou encontrar parceiros casuais para jogos.
+Full-stack application designed to connect gamers seeking online companions, whether to form a competitive team or find casual partners for games.
 
 ### Tecnologias utilizadas:
 ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
@@ -9,14 +9,17 @@ Esta é uma aplicação fullstack projetada para conectar gamers que buscam comp
 ![Prisma](https://img.shields.io/badge/Prisma-3982CE?style=for-the-badge&logo=Prisma&logoColor=white)
 ![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
 
-#### Frontend Web:
-Desenvolvido com React e estilizado usando Tailwind CSS para interfaces responsivas, modernas e fáceis de usar.
-#### Frontend Mobile:
-Construído com React Native, oferecendo uma experiência nativa e otimizada nos dispositivos móveis.
-#### Backend:
-Implementado com Node.js e TypeScript, garantindo desempenho, escalabilidade e segurança.
-#### Banco de Dados:
-Gerenciado com Prisma como ORM, integrando bases de dados SQL para armazenar perfis de usuários, mensagens e conexões.
+### Frontend Web:
+Developed with React and styled using Tailwind CSS for responsive, modern, and user-friendly interfaces.
+
+### Frontend Mobile:
+Built with React Native for a native, optimized mobile experience.
+
+### Backend:
+ Implemented with Node.js and TypeScript, ensuring performance, scalability, and security.
+
+### Database:
+Managed with Prisma ORM, integrating SQL databases to store user profiles, messages, and connections.
 
 ## Web
 
