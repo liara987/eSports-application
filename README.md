@@ -23,5 +23,5 @@ Managed with Prisma ORM, integrating SQL databases to store user profiles, messa
 
 ## Web
 
-### Carrossel responsivo
+### Responsive carousel
 ![chrome-capture-2022-9-28 (4)](https://user-images.githubusercontent.com/12224963/198495642-aa472c17-02c4-4f50-ab9d-513f1483f42a.gif)
